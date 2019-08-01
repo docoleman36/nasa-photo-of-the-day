@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import ReactDOM from "react-dom";
 import "./App.css";
 
 import NasaData from './components/NasaData';
@@ -21,9 +20,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <p>
-        Test
-      </p>
+      <NasaData
+        copyright={data.copyright}
+        title={data.title}
+        date={data.date}
+        img={data.url}
+        par={data.explanation}
+      />
     </div>
   );
 }
