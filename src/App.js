@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import "./App.css";
+import styled from 'styled-components';
 
 import NasaData from './components/NasaData';
+
+
+const WrapperDiv = styled.div`
+  font-family: sans-serif;
+  text-align: center;
+
+`;
 
 export default function App() {
 
@@ -19,7 +26,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
+    <WrapperDiv>
       <NasaData
         copyright={data.copyright}
         title={data.title}
@@ -27,7 +34,7 @@ export default function App() {
         img={data.url}
         par={data.explanation}
       />
-    </div>
+    </WrapperDiv>
   );
 }
 
